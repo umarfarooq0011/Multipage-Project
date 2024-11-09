@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <nav class="nav">
+      <!-- Hamburger Menu for Mobile -->
+      <div class="hamburger" id="hamburger">
+        <i class="uil uil-bars"></i>
+        <i class="uil uil-times cross-icon" style="display: none"></i>
+      </div>
+
+      <a href="#" class="logo">WEBWROX</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="input-container">
+        <input
+          type="text"
+          name="text"
+          class="input"
+          placeholder="Search something..."
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill=""
+          viewBox="0 0 24 24"
+          class="icon"
+        >
+          <rect fill="white" height="24" width="24"></rect>
+          <path
+            d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM9 11.5C9 10.1193 10.1193 9 11.5 9C12.8807 9 14 10.1193 14 11.5C14 12.8807 12.8807 14 11.5 14C10.1193 14 9 12.8807 9 11.5ZM11.5 7C9.01472 7 7 9.01472 7 11.5C7 13.9853 9.01472 16 11.5 16C12.3805 16 13.202 15.7471 13.8957 15.31L15.2929 16.7071C15.6834 17.0976 16.3166 17.0976 16.7071 16.7071C17.0976 16.3166 17.0976 15.6834 16.7071 15.2929L15.31 13.8957C15.7471 13.202 16 12.3805 16 11.5C16 9.01472 13.9853 7 11.5 7Z"
+            clip-rule="evenodd"
+            fill-rule="evenodd"
+          ></path>
+        </svg>
+      </div>
+    </nav>
+
+      <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Empowering Your Business with Cutting-Edge Web Technologies</h1>
+        <p>
+          We provide innovative solutions to help your business thrive in the
+          digital world. Let's build something great together.
+        </p>
+        <a href="#services" class="btn-primary">Explore Our Services</a>
+      </div>
+      </section>
+      
+      
+<!-- Features Section with Parallax Effect -->
+<section class="features parallax-section">
+  <h2 class="parallax-text">Why Choose Us?</h2>
+  <div class="features-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-details">
+        <i class="uil uil-rocket" style="font-size: 2rem; color: #008bf8;"></i>
+        <p class="text-title">Innovative Solutions</p>
+        <p class="text-body">We provide cutting-edge solutions to keep your business ahead of the competition.</p>
+      </div>
+      <button class="card-button">More info</button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-details">
+        <i class="uil uil-thumbs-up" style="font-size: 2rem; color: #008bf8;"></i>
+        <p class="text-title">Client Satisfaction</p>
+        <p class="text-body">Your satisfaction is our priority. We ensure top-quality service at every step.</p>
+      </div>
+      <button class="card-button">More info</button>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-details">
+        <i class="uil uil-clock" style="font-size: 2rem; color: #008bf8;"></i>
+        <p class="text-title">Timely Delivery</p>
+        <p class="text-body">We value your time and deliver projects promptly without compromising quality.</p>
+      </div>
+      <button class="card-button">More info</button>
+    </div>
+  </div>
+</section>
+
+    
+        <!-- Footer container where the footer will be loaded -->
+  <div id="footer-container"></div>
+
+
+
+    <script src="main.js"></script>
+     <script>
+    // Function to dynamically load the footer
+    function loadFooter() {
+      fetch('footer.html')
+        .then(response => response.text()) // Fetch the footer content as text
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data; // Insert footer content into the container
+        })
+        .catch(error => console.error('Error loading footer:', error)); // Handle any errors
+    }
+
+    // Load footer when the document is fully loaded
+    document.addEventListener('DOMContentLoaded', loadFooter);
+  </script>
+  </body>
+</html>

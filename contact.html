@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="static-text">Contact Us</h1>
+        <div class="dynamic-text-box">
+          <p id="dynamic-text"></p>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Form Section -->
+<div class="container">
+  <div class="form-map-container">
+    <form id="contactForm" class="form">
+      <h2>Send us an Email</h2>
+      <div class="flex">
+        <label>
+          <input
+            id="firstName"
+            required
+            placeholder="Enter your first name"
+            type="text"
+            class="input"
+          />
+          <span>First Name</span>
+          <div id="firstNameError" class="error"></div>
+        </label>
+
+        <label>
+          <input
+            id="lastName"
+            required
+            placeholder="Enter your last name"
+            type="text"
+            class="input"
+          />
+          <span>Last Name</span>
+          <div id="lastNameError" class="error"></div>
+        </label>
+      </div>
+      <label>
+        <input
+          id="email"
+          required
+          placeholder="Enter your email"
+          type="email"
+          class="input"
+        />
+        <span>Email</span>
+        <div id="emailError" class="error"></div>
+      </label>
+      <label>
+        <input
+          id="contactNumber"
+          required
+          type="tel"
+          placeholder="Enter your contact number"
+          class="input"
+        />
+        <span>Contact Number</span>
+        <div id="contactError" class="error"></div>
+      </label>
+      <label>
+        <textarea
+          id="message"
+          required
+          rows="3"
+          placeholder="Enter your message"
+          class="input01"
+        ></textarea>
+        <span>Message</span>
+        <div id="messageError" class="error"></div>
+      </label>
+
+      <button id="submit" class="fancy" type="submit">
+        <span class="top-key"></span>
+        <span class="text">Submit</span>
+        <span class="bottom-key-1"></span>
+        <span class="bottom-key-2"></span>
+      </button>
+    </form>
+
+    <!-- Map Section -->
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.34730531745!2d-74.05492427823432!3d40.70556504089796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2509fc420c89b%3A0x59b51eaaac9337!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1604180215469!5m2!1sen!2sin"
+        width="400"
+        height="300"
+        frameborder="0"
+        style="border:0;"
+        allowfullscreen=""
+        aria-hidden="false"
+        tabindex="0"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+    <!-- Footer container where the footer will be loaded -->
+    <div id="footer-container"></div>
+
+    
+    <script src="contact.js"></script>
+    <script src="mail.js"></script>
+
+    <script>
+      // Function to dynamically load the footer
+      function loadFooter() {
+        fetch("footer.html")
+          .then((response) => response.text()) // Fetch the footer content as text
+          .then((data) => {
+            document.getElementById("footer-container").innerHTML = data; // Insert footer content into the container
+          })
+          .catch((error) => console.error("Error loading footer:", error)); // Handle any errors
+      }
+
+      // Load footer when the document is fully loaded
+      document.addEventListener("DOMContentLoaded", loadFooter);
+    </script>
+  </body>
+</html>
